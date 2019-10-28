@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/main_navigation"
+  app:startDestination="@id/mainFragment">
+
+  <fragment
+    android:id="@+id/mainFragment"
+    android:name="dev.foodie.navigationdemo.MainFragment"
+    android:label="fragment_main"
+    tools:layout="@layout/fragment_main" >
+    <action
+      android:id="@+id/action_mainFragment_to_chooseRecipientsFragment"
+      app:destination="@id/chooseRecipientsFragment" />
+    <action
+      android:id="@+id/action_mainFragment_to_viewBalanceFragment"
+      app:destination="@id/viewBalanceFragment" />
+    <action
+      android:id="@+id/action_mainFragment_to_viewTransactionsFragment"
+      app:destination="@id/viewTransactionsFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/chooseRecipientsFragment"
+    android:name="dev.foodie.navigationdemo.ChooseRecipientsFragment"
+    android:label="fragment_choose_recipients"
+    tools:layout="@layout/fragment_choose_recipients" >
+    <action
+      android:id="@+id/action_chooseRecipientsFragment_to_mainFragment"
+      app:destination="@id/mainFragment" />
+    <action
+      android:id="@+id/action_chooseRecipientsFragment_to_specifyAmountFragment"
+      app:destination="@id/specifyAmountFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/specifyAmountFragment"
+    android:name="dev.foodie.navigationdemo.SpecifyAmountFragment"
+    android:label="fragment_specify_amount"
+    tools:layout="@layout/fragment_specify_amount" >
+    <argument
+      android:name="recipient"
+      app:argType="string" />
+    <action android:id="@+id/action_specifyAmountFragment_to_mainFragment" app:destination="@id/mainFragment"/>
+    <action
+      android:id="@+id/action_specifyAmountFragment_to_confirmationFragment"
+      app:destination="@id/confirmationFragment"
+      app:popUpTo="@+id/mainFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/confirmationFragment"
+    android:name="dev.foodie.navigationdemo.ConfirmationFragment"
+    android:label="fragment_confirmation"
+    tools:layout="@layout/fragment_confirmation" >
+    <argument
+      android:name="recipient"
+      app:argType="string" />
+    <argument
+      android:name="amount"
+      app:argType="string" />
+  </fragment>
+  <fragment
+    android:id="@+id/viewBalanceFragment"
+    android:name="dev.foodie.navigationdemo.ViewBalanceFragment"
+    android:label="ViewBalanceFragment" >
+    <argument
+      android:name="balance"
+      app:argType="integer" />
+  </fragment>
+  <fragment
+    android:id="@+id/viewTransactionsFragment"
+    android:name="dev.foodie.navigationdemo.ViewTransactionsFragment"
+    android:label="fragment_view_transactions"
+    tools:layout="@layout/fragment_view_transactions" />
+</navigation>

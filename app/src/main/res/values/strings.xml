@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Navigation Demo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="view_transactions_text">View Transactions</string>
+    <string name="send_money_text">Send Money</string>
+    <string name="view_balance_text">View Balance</string>
+    <string name="recipient">Recipient</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+    <string name="amount">Amount</string>
+    <string name="send">Send</string>
+  <string name="placeholder_amount_sent">$0</string>
+    <string name="placeholder_recipient_text">was sent to Foodie</string>
+  <string name="placeholder_transaction_recipient">Food</string>
+  <string name="placeholder_txn_amount">$200</string>
+  <string name="no_transactions_yet">No transactions yet!</string>
+</resources>
